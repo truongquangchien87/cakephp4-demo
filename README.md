@@ -47,8 +47,6 @@ bin/cake migrations migrate
 bin/cake migrations seed
 ```
 
-You can use API KEY declared in this file to consume application APIs
-
 Then exit the container, type `exit` then Enter
 
 ## Restart docker services
@@ -60,3 +58,26 @@ docker compose up -d
 ```
 
 Then visit `http://localhost:8180/` to see the welcome page.
+
+# API documentation
+
+## API KEY
+- In order to consume application APIs, please use `x-api-key` request header
+- Check `config/.env` file for valid API_KEY
+
+## Users API
+- Endpoint: http://localhost:8180/api/v1/users
+
+### Get list of users
+- Method: GET
+- Optional parameters
+   + page
+
+### Create a new user
+- Method: POST
+- Request data: JSON
+- Required parameters
+   + name
+   + email
+   + username
+   + age
